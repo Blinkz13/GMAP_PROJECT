@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leo - UBA Mobile Banking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="settings-header" style="display:flex;align-items:center;justify-content:space-between;padding:20px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);position:sticky;top:0;z-index:10;box-shadow:0 6px 20px rgba(230,0,0,.25);">
+      <a href="index.html" class="back-btn" style="width:40px;height:40px;background:rgba(255,255,255,.18);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;text-decoration:none;">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      <h2 class="settings-title" style="color:#FFFFFF;font-size:20px;font-weight:600;margin:0;">Leo</h2>
+      <div style="width:40px;height:40px;"></div>
+    </header>
+
+    <main class="main-content" style="padding:20px 20px 120px;background:linear-gradient(180deg,#FFFFFF 0%,#FAFAFA 60%,#F7F7F7 100%);display:flex;flex-direction:column;gap:16px;">
+      <!-- Voice Banking -->
+      <section class="voice-commands-section">
+        <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <h2 class="section-title" style="font-size:18px;font-weight:600;color:#000;">Voice Commands</h2>
+        </div>
+        <div class="voice-card" style="background:#FFFFFF;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div class="voice-header" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div class="voice-icon" style="width:48px;height:48px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:20px;">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <div class="voice-info" style="flex:1;">
+              <h3 class="voice-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 4px 0;">Voice Banking</h3>
+              <p class="voice-description" style="font-size:14px;color:#666;margin:0;">Use voice commands to perform banking tasks</p>
+            </div>
+          </div>
+          <div class="voice-actions" style="display:flex;gap:8px;margin-bottom:16px;">
+            <button class="voice-btn primary" id="voice-command-btn" style="flex:1;padding:12px 16px;border-radius:8px;border:none;background:#E60000;color:#FFF;display:flex;align-items:center;justify-content:center;gap:8px;">
+              <i class="fas fa-microphone"></i>
+              <span>Tap to Speak</span>
+            </button>
+            <button class="voice-btn secondary" style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid #E60000;background:#FFF;color:#E60000;display:flex;align-items:center;justify-content:center;gap:8px;">
+              <i class="fas fa-list"></i>
+              <span>Commands</span>
+            </button>
+          </div>
+          <div class="voice-examples" style="background:#F7F7F7;border-radius:8px;padding:12px;">
+            <div class="voice-examples-title" style="font-size:12px;font-weight:600;color:#666;margin-bottom:8px;">Try saying:</div>
+            <div class="voice-examples-list" style="display:flex;flex-direction:column;gap:4px;">
+              <div class="voice-example" style="font-size:12px;color:#666;">"Transfer ₦10,000 to Mom"</div>
+              <div class="voice-example" style="font-size:12px;color:#666;">"Check my balance"</div>
+              <div class="voice-example" style="font-size:12px;color:#666;">"Pay electricity bill"</div>
+              <div class="voice-example" style="font-size:12px;color:#666;">"Show my savings"</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Financial Insights -->
+      <section class="ai-insights-section">
+        <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <h2 class="section-title" style="font-size:18px;font-weight:600;color:#000;">AI Financial Insights</h2>
+          <button class="view-all-btn" style="display:flex;align-items:center;gap:6px;padding:6px 12px;background:transparent;border:1px solid #E60000;border-radius:6px;color:#E60000;font-size:12px;font-weight:500;">View All</button>
+        </div>
+        <div class="ai-insights-card" style="background:#FFFFFF;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div class="ai-header" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div class="ai-icon" style="width:48px;height:48px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:20px;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="ai-info" style="flex:1;">
+              <h3 class="ai-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 4px 0;">Smart Analysis</h3>
+              <p class="ai-description" style="font-size:14px;color:#666;margin:0;">AI-powered financial recommendations</p>
+            </div>
+          </div>
+          <div class="ai-insights-list" style="display:flex;flex-direction:column;gap:16px;">
+            <div class="ai-insight-item" style="display:flex;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="insight-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:16px;">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="insight-content" style="flex:1;">
+                <h4 class="insight-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 4px 0;">Spending Pattern Detected</h4>
+                <p class="insight-description" style="font-size:12px;color:#666;margin:0 0 8px 0;">You spend 40% more on weekends. Consider setting weekend budgets.</p>
+                <div class="insight-action" style="display:flex;gap:8px;">
+                  <button class="insight-btn" style="padding:6px 12px;background:#E60000;color:#FFF;border:none;border-radius:6px;font-size:12px;font-weight:500;">Set Budget</button>
+                </div>
+              </div>
+            </div>
+            <div class="ai-insight-item" style="display:flex;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="insight-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:16px;">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="insight-content" style="flex:1;">
+                <h4 class="insight-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 4px 0;">Savings Opportunity</h4>
+                <p class="insight-description" style="font-size:12px;color:#666;margin:0 0 8px 0;">You could save ₦25,000 more by reducing dining out expenses.</p>
+                <div class="insight-action" style="display:flex;gap:8px;">
+                  <button class="insight-btn" style="padding:6px 12px;background:#E60000;color:#FFF;border:none;border-radius:6px;font-size:12px;font-weight:500;">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="ai-insight-item" style="display:flex;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="insight-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:16px;">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="insight-content" style="flex:1;">
+                <h4 class="insight-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 4px 0;">Security Alert</h4>
+                <p class="insight-description" style="font-size:12px;color:#666;margin:0 0 8px 0;">Unusual login detected from new device. Verify if it's you.</p>
+                <div class="insight-action" style="display:flex;gap:8px;">
+                  <button class="insight-btn" style="padding:6px 12px;background:#E60000;color:#FFF;border:none;border-radius:6px;font-size:12px;font-weight:500;">Verify</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gaming & Rewards -->
+      <section class="enhanced-gamification-section">
+        <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <h2 class="section-title" style="font-size:18px;font-weight:600;color:#000;">Gaming & Rewards</h2>
+        </div>
+        <div class="gamification-card" style="background:#FFFFFF;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div class="games-grid" style="display:grid;grid-template-columns:1fr;gap:12px;">
+            <div class="game-item" style="display:flex;align-items:center;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="game-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;">
+                <i class="fas fa-dice"></i>
+              </div>
+              <div class="game-info" style="flex:1;">
+                <h4 class="game-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 2px 0;">Savings Dice</h4>
+                <p class="game-description" style="font-size:12px;color:#666;margin:0 0 4px 0;">Roll dice to save money</p>
+                <div class="game-reward" style="font-size:11px;color:#E60000;font-weight:500;">Reward: ₦500</div>
+              </div>
+              <button class="game-btn" style="padding:8px 16px;background:#E60000;color:#FFF;border:none;border-radius:8px;font-size:12px;font-weight:500;">Play Now</button>
+            </div>
+            <div class="game-item" style="display:flex;align-items:center;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="game-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <div class="game-info" style="flex:1;">
+                <h4 class="game-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 2px 0;">Financial Puzzle</h4>
+                <p class="game-description" style="font-size:12px;color:#666;margin:0 0 4px 0;">Solve puzzles to earn points</p>
+                <div class="game-reward" style="font-size:11px;color:#E60000;font-weight:500;">Reward: 100 Points</div>
+              </div>
+              <button class="game-btn" style="padding:8px 16px;background:#E60000;color:#FFF;border:none;border-radius:8px;font-size:12px;font-weight:500;">Play Now</button>
+            </div>
+            <div class="game-item" style="display:flex;align-items:center;gap:12px;padding:16px;background:#F7F7F7;border-radius:12px;">
+              <div class="game-icon" style="width:40px;height:40px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="game-info" style="flex:1;">
+                <h4 class="game-title" style="font-size:14px;font-weight:600;color:#000;margin:0 0 2px 0;">Savings Challenge</h4>
+                <p class="game-description" style="font-size:12px;color:#666;margin:0 0 4px 0;">Complete challenges for rewards</p>
+                <div class="game-reward" style="font-size:11px;color:#E60000;font-weight:500;">Reward: ₦1,000</div>
+              </div>
+              <button class="game-btn" style="padding:8px 16px;background:#E60000;color:#FFF;border:none;border-radius:8px;font-size:12px;font-weight:500;">Play Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Quizzes -->
+      <section>
+        <div style="background:#FFFFFF;border-radius:16px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);display:flex;align-items:center;justify-content:center;color:#FFF;font-size:20px;">
+              <i class="fas fa-question"></i>
+            </div>
+            <div style="flex:1;">
+              <h4 style="margin:0 0 4px 0;font-size:16px;color:#000;font-weight:600;">Interactive Quizzes</h4>
+              <p style="margin:0;color:#666;font-size:13px;">Test your financial knowledge and earn rewards.</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr;gap:8px;">
+            <button style="background:#FFFFFF;color:#E60000;border:1px solid #E60000;border-radius:8px;padding:10px 12px;font-size:14px;font-weight:500;text-align:left;">Budgeting Basics Quiz</button>
+            <button style="background:#FFFFFF;color:#E60000;border:1px solid #E60000;border-radius:8px;padding:10px 12px;font-size:14px;font-weight:500;text-align:left;">Savings Strategies Quiz</button>
+            <button style="background:#FFFFFF;color:#E60000;border:1px solid #E60000;border-radius:8px;padding:10px 12px;font-size:14px;font-weight:500;text-align:left;">Security & Fraud Quiz</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:414px;background:#FFFFFF;border-top:1px solid #F0F0F0;display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 -2px 10px rgba(0,0,0,.1);">
+      <a href="index.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-home"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Home</span>
+      </a>
+      <a href="transfer.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-exchange-alt"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Transfers</span>
+      </a>
+      <a href="leo.html" class="nav-item active" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#E60000;text-decoration:none;">
+        <i class="fas fa-robot"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Leo</span>
+      </a>
+      <a href="savings.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-piggy-bank"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Savings</span>
+      </a>
+      <a href="more.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-bars"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">More</span>
+      </a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

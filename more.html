@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>More - UBA Mobile Banking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="settings-header" style="display:flex;align-items:center;justify-content:space-between;padding:20px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);position:sticky;top:0;z-index:10;box-shadow:0 6px 20px rgba(230,0,0,.25);">
+      <a href="index.html" class="back-btn" style="width:40px;height:40px;background:rgba(255,255,255,.18);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;text-decoration:none;">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      <h2 class="settings-title" style="color:#FFFFFF;font-size:20px;font-weight:600;margin:0;">More</h2>
+      <div style="width:40px;height:40px;"></div>
+    </header>
+
+    <main class="main-content" style="padding:20px 20px 120px;background:linear-gradient(180deg,#FFFFFF 0%,#FAFAFA 60%,#F7F7F7 100%);display:flex;flex-direction:column;gap:16px;">
+      <!-- Leaderboard (moved) -->
+      <section>
+        <div style="background:#FFFFFF;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h3 style="font-size:18px;font-weight:600;color:#000;margin:0;">Leaderboard</h3>
+            <button style="padding:6px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">View All</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#FFF5F5;border:1px solid #FFE0E0;border-radius:12px;padding:10px 12px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#E60000;color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:700;">1</div>
+                <div>
+                  <div style="font-size:14px;font-weight:600;color:#000;">Ada</div>
+                  <div style="font-size:12px;color:#666;">₦320,000 saved</div>
+                </div>
+              </div>
+              <span style="font-size:12px;color:#E60000;font-weight:700;">+5%</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:10px 12px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#CCCCCC;color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;">2</div>
+                <div>
+                  <div style="font-size:14px;font-weight:600;color:#000;">Bola</div>
+                  <div style="font-size:12px;color:#666;">₦250,000 saved</div>
+                </div>
+              </div>
+              <span style="font-size:12px;color:#28a745;font-weight:700;">+2%</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:10px 12px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#CCCCCC;color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;">3</div>
+                <div>
+                  <div style="font-size:14px;font-weight:600;color:#000;">Chuks</div>
+                  <div style="font-size:12px;color:#666;">₦230,000 saved</div>
+                </div>
+              </div>
+              <span style="font-size:12px;color:#999;font-weight:700;">0%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Referral Hub (new) -->
+      <section>
+        <div style="background:#FFFFFF;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h3 style="font-size:18px;font-weight:600;color:#000;margin:0;">Referral Hub</h3>
+            <button style="padding:6px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Invite</button>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+            <div style="background:#FFF5F5;border:1px solid #FFE0E0;border-radius:12px;padding:12px;">
+              <div style="font-size:12px;color:#666;">Total Referrals</div>
+              <div style="font-size:22px;font-weight:800;color:#E60000;">12</div>
+            </div>
+            <div style="background:#F7F7F7;border:1px solid #F0F0F0;border-radius:12px;padding:12px;">
+              <div style="font-size:12px;color:#666;">Pending Bonuses</div>
+              <div style="font-size:22px;font-weight:800;color:#000;">₦6,500</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:8px;">
+            <input type="text" placeholder="Referral code" style="flex:1;padding:10px 12px;border:1px solid #E0E0E0;border-radius:8px;font-size:14px;outline:none;" />
+            <button style="padding:10px 12px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:14px;font-weight:600;">Copy</button>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:8px;">
+            <button style="flex:1;padding:10px 12px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:14px;font-weight:600;">Track Referrals</button>
+            <button style="flex:1;padding:10px 12px;border:none;background:#28a745;color:#FFF;border-radius:8px;font-size:14px;font-weight:600;">Redeem Bonus</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events & Community Programs (new) -->
+      <section>
+        <div style="background:#FFFFFF;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h3 style="font-size:18px;font-weight:600;color:#000;margin:0;">Events & Community</h3>
+            <button style="padding:6px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">See All</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;background:#F7F7F7;border-radius:12px;padding:12px;">
+              <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:800;">12
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:14px;font-weight:700;color:#000;">UBA Youth Webinar: Career & Money</div>
+                <div style="font-size:12px;color:#666;">Online • Sat 10:00 AM</div>
+              </div>
+              <button style="padding:8px 12px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Register</button>
+            </div>
+            <div style="display:flex;gap:12px;background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:12px;">
+              <div style="width:54px;height:54px;border-radius:12px;background:#000;color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:800;">28</div>
+              <div style="flex:1;">
+                <div style="font-size:14px;font-weight:700;color:#000;">GMAP Community Hangout</div>
+                <div style="font-size:12px;color:#666;">UBA HQ • Fri 4:00 PM</div>
+              </div>
+              <button style="padding:8px 12px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Details</button>
+            </div>
+            <div style="display:flex;gap:12px;background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:12px;">
+              <div style="width:54px;height:54px;border-radius:12px;background:#F7F7F7;color:#000;display:flex;align-items:center;justify-content:center;font-weight:800;">5</div>
+              <div style="flex:1;">
+                <div style="font-size:14px;font-weight:700;color:#000;">GMAP News: Mobile App Update</div>
+                <div style="font-size:12px;color:#666;">Blog • New features released</div>
+              </div>
+              <button style="padding:8px 12px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Read</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Marketplace (new) -->
+      <section>
+        <div style="background:#FFFFFF;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h3 style="font-size:18px;font-weight:600;color:#000;margin:0;">Product Marketplace</h3>
+            <button style="padding:6px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Explore</button>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+            <div style="background:#F7F7F7;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:#E60000;color:#FFF;display:flex;align-items:center;justify-content:center;"><i class="fas fa-hand-holding-usd"></i></div>
+              <div style="font-size:14px;font-weight:700;color:#000;">Loans</div>
+              <div style="font-size:12px;color:#666;">Instant personal and business loans</div>
+              <button style="margin-top:auto;padding:8px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Apply</button>
+            </div>
+            <div style="background:#F7F7F7;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:#000;color:#FFF;display:flex;align-items:center;justify-content:center;"><i class="fas fa-shield-alt"></i></div>
+              <div style="font-size:14px;font-weight:700;color:#000;">Insurance</div>
+              <div style="font-size:12px;color:#666;">Protect life, health, and assets</div>
+              <button style="margin-top:auto;padding:8px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Learn more</button>
+            </div>
+            <div style="background:#F7F7F7;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:#CC0000;color:#FFF;display:flex;align-items:center;justify-content:center;"><i class="fas fa-chart-line"></i></div>
+              <div style="font-size:14px;font-weight:700;color:#000;">Investments</div>
+              <div style="font-size:12px;color:#666;">Plans for wealth growth</div>
+              <button style="margin-top:auto;padding:8px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Explore</button>
+            </div>
+            <div style="background:#F7F7F7;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:#FF6B35;color:#FFF;display:flex;align-items:center;justify-content:center;"><i class="fas fa-wallet"></i></div>
+              <div style="font-size:14px;font-weight:700;color:#000;">Cards & Wallets</div>
+              <div style="font-size:12px;color:#666;">Debit, virtual cards and wallets</div>
+              <button style="margin-top:auto;padding:8px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Get Card</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:414px;background:#FFFFFF;border-top:1px solid #F0F0F0;display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 -2px 10px rgba(0,0,0,.1);">
+      <a href="index.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-home"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Home</span>
+      </a>
+      <a href="transfer.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-exchange-alt"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Transfers</span>
+      </a>
+      <a href="leo.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-robot"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Leo</span>
+      </a>
+      <a href="savings.html" class="nav-item" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#666;text-decoration:none;">
+        <i class="fas fa-piggy-bank"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">Savings</span>
+      </a>
+      <a href="more.html" class="nav-item active" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;color:#E60000;text-decoration:none;">
+        <i class="fas fa-bars"></i>
+        <span class="nav-text" style="font-size:10px;font-weight:500;">More</span>
+      </a>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

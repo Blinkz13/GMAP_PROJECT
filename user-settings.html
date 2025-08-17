@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings - UBA Mobile Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="settings-page">
+    <div class="app-container">
+        <!-- Settings Header -->
+        <header class="settings-header" style="display:flex;align-items:center;justify-content:space-between;padding:20px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);position:sticky;top:0;z-index:10;box-shadow:0 6px 20px rgba(230,0,0,.25);">
+            <a href="index.html" class="back-btn" id="back-to-main" style="width:40px;height:40px;background:rgba(255,255,255,.18);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;cursor:pointer;text-decoration:none;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h2 class="settings-title" style="color:#FFFFFF;font-size:20px;font-weight:600;margin:0;">User Settings</h2>
+            <div class="settings-actions">
+                <button class="save-settings-btn" style="width:40px;height:40px;background:rgba(255,255,255,.18);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;cursor:pointer;">
+                    <i class="fas fa-save"></i>
+                </button>
+            </div>
+        </header>
+        
+        <div class="settings-content" style="padding:20px;background:linear-gradient(180deg,#FFFFFF 0%,#FAFAFA 60%,#F7F7F7 100%);">
+            <!-- Profile Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 12px 0;">Profile</h3>
+                </div>
+                <div class="profile-card" style="background:#FFFFFF;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div class="profile-photo-section" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin-bottom:20px;">
+                        <div class="profile-photo-large" id="profile-photo-large" style="width:80px;height:80px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:32px;box-shadow:0 0 0 4px #FFFFFF,0 10px 28px rgba(230,0,0,.35);border:3px solid #FFFFFF;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <button class="change-photo-btn" style="background:#F7F7F7;border:1px solid #E0E0E0;border-radius:8px;padding:8px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;color:#000000;font-size:14px;">
+                            <i class="fas fa-camera"></i>
+                            <span>Change Photo</span>
+                        </button>
+                    </div>
+                    <div class="profile-info" style="display:flex;flex-direction:column;gap:15px;">
+                        <div class="input-group" style="display:flex;flex-direction:column;gap:6px;">
+                            <label for="user-name-input" style="font-size:14px;font-weight:500;color:#000;">Full Name</label>
+                            <input type="text" id="user-name-input" value="John Doe" placeholder="Enter your full name" style="padding:12px;border:1px solid #E0E0E0;border-radius:8px;font-size:16px;">
+                        </div>
+                        <div class="input-group" style="display:flex;flex-direction:column;gap:6px;">
+                            <label for="user-email-input" style="font-size:14px;font-weight:500;color:#000;">Email</label>
+                            <input type="email" id="user-email-input" value="john.doe@email.com" placeholder="Enter your email" style="padding:12px;border:1px solid #E0E0E0;border-radius:8px;font-size:16px;">
+                        </div>
+                        <div class="input-group" style="display:flex;flex-direction:column;gap:6px;">
+                            <label for="user-phone-input" style="font-size:14px;font-weight:500;color:#000;">Phone Number</label>
+                            <input type="tel" id="user-phone-input" value="+234 801 234 5678" placeholder="Enter your phone number" style="padding:12px;border:1px solid #E0E0E0;border-radius:8px;font-size:16px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notification Settings -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 12px 0;">Notification Sounds & Alerts</h3>
+                </div>
+                <div class="settings-card" style="background:#FFFFFF;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Transaction Notifications</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Get notified when transactions are completed</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="transaction-notifications" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Savings Milestones</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Celebrate when you reach savings goals</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="savings-milestones" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Challenge Alerts</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Get reminded about daily challenges</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="challenge-alerts" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Sound Effects</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Play sounds for notifications</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="sound-effects">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Vibration</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Vibrate on notifications</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="vibration" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Language & Region -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 12px 0;">Language & Region</h3>
+                </div>
+                <div class="settings-card" style="background:#FFFFFF;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">App Language</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Choose your preferred language</p>
+                        </div>
+                        <select class="settings-select" id="app-language" style="padding:8px 12px;border:1px solid #E0E0E0;border-radius:6px;background:#FFFFFF;font-size:14px;min-width:150px;">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Currency Format</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Select your preferred currency</p>
+                        </div>
+                        <select class="settings-select" id="currency-format" style="padding:8px 12px;border:1px solid #E0E0E0;border-radius:6px;background:#FFFFFF;font-size:14px;min-width:150px;">
+                            <option value="NGN">Nigerian Naira (₦)</option>
+                            <option value="USD">US Dollar ($)</option>
+                            <option value="EUR">Euro (€)</option>
+                            <option value="GBP">British Pound (£)</option>
+                        </select>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Date Format</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Choose date display format</p>
+                        </div>
+                        <select class="settings-select" id="date-format" style="padding:8px 12px;border:1px solid #E0E0E0;border-radius:6px;background:#FFFFFF;font-size:14px;min-width:150px;">
+                            <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                            <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                            <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy & Security -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 12px 0;">Privacy & Security</h3>
+                </div>
+                <div class="settings-card" style="background:#FFFFFF;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Change PIN</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Update your transaction PIN</p>
+                        </div>
+                        <button class="settings-btn" style="background:#E60000;color:#FFFFFF;border:none;border-radius:6px;padding:8px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;">
+                            <i class="fas fa-key"></i>
+                            <span>Change</span>
+                        </button>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Biometric Login</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Use fingerprint or face ID</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="biometric-login" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Public Savings Progress</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Allow others to see your savings progress</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="public-savings">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #F0F0F0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Leaderboard Visibility</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Show your position on leaderboards</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="leaderboard-visibility" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;">
+                        <div class="setting-info">
+                            <h4 class="setting-title" style="font-size:16px;font-weight:500;color:#000;margin:0 0 4px 0;">Two-Factor Authentication</h4>
+                            <p class="setting-description" style="font-size:14px;color:#666;margin:0;">Add extra security to your account</p>
+                        </div>
+                        <button class="settings-btn" style="background:#E60000;color:#FFFFFF;border:none;border-radius:6px;padding:8px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enable</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Linked Accounts & Payment Methods -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title" style="font-size:18px;font-weight:600;color:#000;margin:0 0 12px 0;">Linked Accounts & Payment Methods</h3>
+                </div>
+                <div class="settings-card" style="background:#FFFFFF;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div class="linked-accounts-list" style="display:flex;flex-direction:column;gap:10px;margin-bottom:15px;">
+                        <div class="linked-account-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px;background:#F7F7F7;border-radius:8px;">
+                            <div class="account-info" style="display:flex;align-items:center;gap:12px;">
+                                <div class="account-icon" style="width:40px;height:40px;background:#E60000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="account-details" style="display:flex;flex-direction:column;">
+                                    <h4 class="account-name" style="font-size:16px;font-weight:500;color:#000;margin:0 0 2px 0;">Visa Card ending in 1234</h4>
+                                    <p class="account-type" style="font-size:14px;color:#666;margin:0;">Credit Card</p>
+                                </div>
+                            </div>
+                            <button class="remove-account-btn" style="width:32px;height:32px;background:#FF4444;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:12px;cursor:pointer;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="linked-account-item" style="display:flex;justify-content:space-between;align-items:center;padding:15px;background:#F7F7F7;border-radius:8px;">
+                            <div class="account-info" style="display:flex;align-items:center;gap:12px;">
+                                <div class="account-icon" style="width:40px;height:40px;background:#E60000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:16px;">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="account-details" style="display:flex;flex-direction:column;">
+                                    <h4 class="account-name" style="font-size:16px;font-weight:500;color:#000;margin:0 0 2px 0;">Mobile Money</h4>
+                                    <p class="account-type" style="font-size:14px;color:#666;margin:0;">+234 801 234 5678</p>
+                                </div>
+                            </div>
+                            <button class="remove-account-btn" style="width:32px;height:32px;background:#FF4444;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:12px;cursor:pointer;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="add-account-btn" style="background:#E60000;color:#FFFFFF;border:none;border-radius:8px;padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-size:16px;width:100%;">
+                        <i class="fas fa-plus"></i>
+                        <span>Add New Account</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize user settings page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup back button (redundant now that it's a link, but safe to keep)
+            setupBackButton();
+            
+            // Setup settings toggles
+            setupSettingsToggles();
+            
+            // Setup settings inputs
+            setupSettingsInputs();
+            
+            // Load saved settings
+            loadSavedSettings();
+            
+            // Hook up save button
+            const saveBtn = document.querySelector('.save-settings-btn');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    saveAllSettings();
+                });
+            }
+        });
+        
+        function loadSavedSettings() {
+            // Load saved settings from localStorage
+            const savedSettings = localStorage.getItem('userSettings');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                
+                // Apply saved settings to form elements
+                Object.keys(settings).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        if (element.type === 'checkbox') {
+                            element.checked = settings[key];
+                        } else {
+                            element.value = settings[key];
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBA Mobile Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <div class="user-profile-section">
+                    <a href="user-settings.html" class="user-photo" id="user-photo" aria-label="Open user settings">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="greeting">
+                        <span class="greeting-text">Hi <span class="user-name">Name</span>,</span>
+                        <div class="welcome-text">Welcome back</div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="uba-logo">
+                    <span class="logo-text">UBA</span>
+                    <div class="logo-arrow"></div>
+                </div>
+                <div class="notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Account Balance Section -->
+            <section class="balance-section">
+                <div class="balance-card">
+                    <div class="balance-amount">
+                        <span class="currency">₦</span>
+                        <span class="amount">100,000</span>
+                    </div>
+                    <div class="balance-toggle">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Bills Section -->
+            <section class="upcoming-bills-section">
+                <div style="background:#FFFFFF;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #F0F0F0;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                        <h2 style="font-size:18px;font-weight:700;color:#000;margin:0;">Upcoming Bills</h2>
+                        <button style="padding:6px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">View All</button>
+                    </div>
+                    <div class="bills-list" style="display:flex;flex-direction:column;gap:10px;">
+                        <!-- Bill: Electricity -->
+                        <div class="bill-item" data-bill-id="electricity" style="background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:12px;display:flex;gap:12px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#E60000 0%,#CC0000 100%);color:#FFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="display:flex;flex-direction:column;">
+                                        <span style="font-size:14px;font-weight:700;color:#000;">Electricity</span>
+                                        <span style="font-size:12px;color:#666;">Due Tue, 15th</span>
+                                    </div>
+                                    <div style="text-align:right;">
+                                        <div style="font-size:14px;font-weight:700;color:#000;">₦12,500</div>
+                                        <span class="bill-status" data-status="due-soon" style="display:inline-block;margin-top:4px;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:700;color:#B45309;background:#FFF7ED;border:1px solid #FBD38D;">Due soon</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <button class="pay-bill-btn" style="flex:1;padding:8px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Pay Now</button>
+                                    <button class="remind-bill-btn" style="flex:1;padding:8px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Remind</button>
+                                    <button class="mark-paid-bill-btn" style="padding:8px 10px;border:1px solid #E0E0E0;background:#F7F7F7;color:#000;border-radius:8px;font-size:12px;font-weight:600;">Mark paid</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bill: Internet -->
+                        <div class="bill-item" data-bill-id="internet" style="background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:12px;display:flex;gap:12px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:#000;color:#FFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="display:flex;flex-direction:column;">
+                                        <span style="font-size:14px;font-weight:700;color:#000;">Internet</span>
+                                        <span style="font-size:12px;color:#666;">Due Fri, 18th</span>
+                                    </div>
+                                    <div style="text-align:right;">
+                                        <div style="font-size:14px;font-weight:700;color:#000;">₦8,000</div>
+                                        <span class="bill-status" data-status="scheduled" style="display:inline-block;margin-top:4px;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:700;color:#065F46;background:#ECFDF5;border:1px solid #A7F3D0;">Scheduled</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <button class="pay-bill-btn" style="flex:1;padding:8px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Pay Now</button>
+                                    <button class="remind-bill-btn" style="flex:1;padding:8px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Remind</button>
+                                    <button class="mark-paid-bill-btn" style="padding:8px 10px;border:1px solid #E0E0E0;background:#F7F7F7;color:#000;border-radius:8px;font-size:12px;font-weight:600;">Mark paid</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bill: Rent (Overdue) -->
+                        <div class="bill-item" data-bill-id="rent" style="background:#FFFFFF;border:1px solid #F0F0F0;border-radius:12px;padding:12px;display:flex;gap:12px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:#FF6B35;color:#FFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="display:flex;flex-direction:column;">
+                                        <span style="font-size:14px;font-weight:700;color:#000;">Rent</span>
+                                        <span style="font-size:12px;color:#666;">Due Yesterday</span>
+                                    </div>
+                                    <div style="text-align:right;">
+                                        <div style="font-size:14px;font-weight:700;color:#000;">₦150,000</div>
+                                        <span class="bill-status" data-status="overdue" style="display:inline-block;margin-top:4px;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:800;color:#FFFFFF;background:#E60000;border:1px solid #E60000;">Overdue</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <button class="pay-bill-btn" style="flex:1;padding:8px 10px;border:none;background:#E60000;color:#FFF;border-radius:8px;font-size:12px;font-weight:600;">Pay Now</button>
+                                    <button class="remind-bill-btn" style="flex:1;padding:8px 10px;border:1px solid #E60000;background:#FFF;color:#E60000;border-radius:8px;font-size:12px;font-weight:600;">Remind</button>
+                                    <button class="mark-paid-bill-btn" style="padding:8px 10px;border:1px solid #E0E0E0;background:#F7F7F7;color:#000;border-radius:8px;font-size:12px;font-weight:600;">Mark paid</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Action Buttons -->
+            <section class="quick-actions">
+                <div class="action-button">
+                    <div class="action-icon transfer-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <span class="action-text">Transfer</span>
+                </div>
+                <div class="action-button">
+                    <div class="action-icon airtime-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <span class="action-text">Airtime</span>
+                </div>
+                <div class="action-button">
+                    <div class="action-icon bills-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="action-text">Pay Bills</span>
+                </div>
+                <div class="action-button">
+                    <div class="action-icon qr-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <span class="action-text">QR Code</span>
+                </div>
+            </section>
+
+            
+
+            <!-- Achievement Badges Section -->
+            <section class="achievement-badges-section">
+                <div class="section-header">
+                    <h2 class="section-title">Achievement Badges</h2>
+                    <button class="view-all-btn">
+                        <span>View All</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="badges-grid">
+                    <!-- Unlocked Badges -->
+                    <div class="badge-item unlocked">
+                        <div class="badge-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">First Transfer</h4>
+                            <p class="badge-description">Complete your first transfer</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="badge-item unlocked">
+                        <div class="badge-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">Savings Champion</h4>
+                            <p class="badge-description">Save ₦50,000 in a month</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="badge-item unlocked">
+                        <div class="badge-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">Streak Master</h4>
+                            <p class="badge-description">7-day saving streak</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <!-- Locked Badges -->
+                    <div class="badge-item locked">
+                        <div class="badge-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">Group Leader</h4>
+                            <p class="badge-description">Create 3 group savings</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="badge-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">Diamond Saver</h4>
+                            <p class="badge-description">Save ₦500,000 total</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="badge-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="badge-info">
+                            <h4 class="badge-title">Top 10</h4>
+                            <p class="badge-description">Reach top 10 in leaderboard</p>
+                        </div>
+                        <div class="badge-status">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Features Section -->
+            <section class="social-features-section">
+                <div class="section-header">
+                    <h2 class="section-title">Social Banking</h2>
+                    <button class="create-post-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+                
+                <div class="social-feed">
+                    <!-- Social Post 1 -->
+                    <div class="social-post">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-info">
+                                <h4 class="post-author">Sarah K.</h4>
+                                <span class="post-time">2 hours ago</span>
+                            </div>
+                            <div class="post-privacy">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p class="post-text">🎉 Just completed my 30-day savings challenge! Saved ₦30,000 and earned ₦5,000 bonus! #UBASavings #FinancialGoals</p>
+                            <div class="post-achievement">
+                                <div class="achievement-badge">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Challenge Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-actions">
+                            <button class="post-action">
+                                <i class="fas fa-heart"></i>
+                                <span>24</span>
+                            </button>
+                            <button class="post-action">
+                                <i class="fas fa-comment"></i>
+                                <span>8</span>
+                            </button>
+                            <button class="post-action">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Social Post 2 -->
+                    <div class="social-post">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-info">
+                                <h4 class="post-author">Mike T.</h4>
+                                <span class="post-time">5 hours ago</span>
+                            </div>
+                            <div class="post-privacy">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p class="post-text">🏠 Our family renovation fund reached 80%! Thanks to everyone who contributed. Almost there! #GroupSavings #HomeRenovation</p>
+                            <div class="post-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%;"></div>
+                                </div>
+                                <span class="progress-text">₦800,000 of ₦1,000,000</span>
+                            </div>
+                        </div>
+                        <div class="post-actions">
+                            <button class="post-action">
+                                <i class="fas fa-heart"></i>
+                                <span>15</span>
+                            </button>
+                            <button class="post-action">
+                                <i class="fas fa-comment"></i>
+                                <span>12</span>
+                            </button>
+                            <button class="post-action">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            
+
+            
+
+            <!-- Personalized Recommendations Section (Phase 3) -->
+            <section class="recommendations-section">
+                <div class="section-header">
+                    <h2 class="section-title">Personalized Recommendations</h2>
+                </div>
+                <div class="recommendations-card">
+                    <div class="recommendations-header">
+                        <div class="recommendations-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="recommendations-info">
+                            <h3 class="recommendations-title">For You</h3>
+                            <p class="recommendations-description">Tailored recommendations based on your behavior</p>
+                        </div>
+                    </div>
+                    <div class="recommendations-list">
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4 class="recommendation-title">Credit Card Offer</h4>
+                                <p class="recommendation-description">Get 5% cashback on dining with our new credit card</p>
+                                <div class="recommendation-action">
+                                    <button class="recommendation-btn">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4 class="recommendation-title">Investment Opportunity</h4>
+                                <p class="recommendation-description">Start investing with as little as ₦5,000</p>
+                                <div class="recommendation-action">
+                                    <button class="recommendation-btn">Start Investing</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h4 class="recommendation-title">Financial Education</h4>
+                                <p class="recommendation-description">Learn about budgeting and saving strategies</p>
+                                <div class="recommendation-action">
+                                    <button class="recommendation-btn">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            
+
+            
+
+            
+
+            <!-- Spending Analytics Section -->
+            <section class="spending-analytics-section">
+                <div class="section-header">
+                    <h2 class="section-title">Spending Analytics</h2>
+                    <button class="view-all-btn">
+                        <span>View All</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="analytics-cards">
+                    <!-- Monthly Overview -->
+                    <div class="analytics-card">
+                        <div class="analytics-header">
+                            <h3 class="analytics-title">This Month</h3>
+                            <div class="analytics-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="analytics-content">
+                            <div class="analytics-stat">
+                                <span class="stat-label">Total Spent</span>
+                                <span class="stat-value">₦45,000</span>
+                            </div>
+                            <div class="analytics-stat">
+                                <span class="stat-label">Budget Remaining</span>
+                                <span class="stat-value positive">₦15,000</span>
+                            </div>
+                            <div class="analytics-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                                <span class="progress-text">75% of budget used</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spending Categories -->
+                    <div class="analytics-card">
+                        <div class="analytics-header">
+                            <h3 class="analytics-title">Top Categories</h3>
+                            <div class="analytics-icon">
+                                <i class="fas fa-pie-chart"></i>
+                            </div>
+                        </div>
+                        <div class="analytics-content">
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color food"></div>
+                                    <span class="category-name">Food & Dining</span>
+                                </div>
+                                <span class="category-amount">₦15,000</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color transport"></div>
+                                    <span class="category-name">Transport</span>
+                                </div>
+                                <span class="category-amount">₦12,000</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color shopping"></div>
+                                    <span class="category-name">Shopping</span>
+                                </div>
+                                <span class="category-amount">₦8,000</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-info">
+                                    <div class="category-color bills"></div>
+                                    <span class="category-name">Bills</span>
+                                </div>
+                                <span class="category-amount">₦10,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Home</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span class="nav-text">Transfers</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-robot"></i>
+                <span class="nav-text">Leo</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-piggy-bank"></i>
+                <span class="nav-text">Savings</span>
+            </div>
+            <a href="more.html" class="nav-item" aria-label="More">
+                <i class="fas fa-bars"></i>
+                <span class="nav-text">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
